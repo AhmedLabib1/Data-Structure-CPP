@@ -19,13 +19,14 @@ int binarySearch(vector<int> vec, int n, int key)
     
     while(s <= e)
     {
-        int mid = (s + e) / 2;
+        // to avoid overflow
+        int mid = s + (e - s) / 2;
 
         if (key == vec[mid]) return mid;
 
         else if (key < vec[mid]) e = mid - 1;
 
-        else if (key > vec[mid]) s = mid + 1;
+        else                     s = mid + 1;
     }
 
     return -1;
