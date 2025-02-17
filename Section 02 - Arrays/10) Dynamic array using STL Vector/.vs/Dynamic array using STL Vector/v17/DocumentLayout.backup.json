@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pc\\OneDrive\\Desktop\\Data structure\\Section 2\\10) Dynamic array using STL Vector\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{01690DE4-9C1C-47C7-85E2-90022D411419}|Dynamic array using STL Vector\\Dynamic array using STL Vector.vcxproj|C:\\Users\\pc\\OneDrive\\Desktop\\Data structure\\Section 2\\10) Dynamic array using STL Vector\\Dynamic array using STL Vector\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{01690DE4-9C1C-47C7-85E2-90022D411419}|Dynamic array using STL Vector\\Dynamic array using STL Vector.vcxproj|solutionrelative:Dynamic array using STL Vector\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "C:\\Users\\pc\\OneDrive\\Desktop\\Data structure\\Section 2\\10) Dynamic array using STL Vector\\Dynamic array using STL Vector\\Source.cpp",
+              "RelativeDocumentMoniker": "Dynamic array using STL Vector\\Source.cpp",
+              "ToolTip": "C:\\Users\\pc\\OneDrive\\Desktop\\Data structure\\Section 2\\10) Dynamic array using STL Vector\\Dynamic array using STL Vector\\Source.cpp",
+              "RelativeToolTip": "Dynamic array using STL Vector\\Source.cpp",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-11T12:47:54.546Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
