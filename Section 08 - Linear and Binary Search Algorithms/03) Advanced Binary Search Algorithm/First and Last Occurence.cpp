@@ -12,25 +12,8 @@ using namespace std;
     
     count = last_index − first_index + 1
 */
-int firstOccurence (const vector<int>& vec, int n, int key)
-{
-    int s = 0, e = n-1, first = -1;
 
-    while (s <= e){
-        int mid = s + (e - s) / 2;
-
-        if (key == vec[mid])
-        {
-            first = mid;
-            e = mid - 1;
-        }
-        else if (key > vec[mid]) s = mid+1;
-        else e = mid - 1;
-    }
-    return first;
-}
-
-int lastOccurence (const vector<int>& vec, int n, int key)
+int getIndex (const vector<int>& vec, int n, int key, bool findFirst)
 {
     int s = 0, e = n-1, last = -1;
 
@@ -40,7 +23,9 @@ int lastOccurence (const vector<int>& vec, int n, int key)
         if (key == vec[mid])
         {
             last = mid;
-            s = mid + 1;
+
+            if (findFirst) e = mid - 1;
+            else           s = mid + 1;
         }
         else if (key > vec[mid]) s = mid+1;
         else e = mid - 1;
@@ -69,8 +54,8 @@ int main ()
     cout << "\n\nEnter key you want to find: ";
     cin >> key;
 
-    int first = firstOccurence(vec, size, key);
-    int last = lastOccurence(vec, size, key);
+    int first = getIndex(vec, size, key, true);
+    int last = getIndex(vec, size, key, false);
 
     if (first == -1) cout << "Key not found in array!" << endl;
     else{
