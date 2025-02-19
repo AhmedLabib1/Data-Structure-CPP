@@ -12,14 +12,14 @@ using namespace std;
     Binary Search work only in sorted arrays
 */
 
-int binarySearch(vector<int> vec, int n, int key)
+int binarySearch(vector<int>& vec, int n, int key)
 {
     int s = 0;
     int e = n - 1;
     
     while(s <= e)
     {
-        // to avoid overflow
+        // to avoid integer overflow
         int mid = s + (e - s) / 2;
 
         if (key == vec[mid]) return mid;
@@ -57,7 +57,7 @@ int main ()
         cout << i << " ";
     }
 
-    cout << "\n\nEnter key you want found: ";
+    cout << "\n\nEnter key you want to find: ";
     cin >> key;
 
     int result = binarySearch(vec, size, key);
