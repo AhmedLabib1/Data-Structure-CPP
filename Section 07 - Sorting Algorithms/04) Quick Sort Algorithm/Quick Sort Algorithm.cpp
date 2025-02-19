@@ -1,8 +1,9 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
+#include <chrono>
 
 using namespace std;
+using namespace chrono;
 
 /*
 _______________________________________________________________________________________
@@ -46,15 +47,22 @@ void quickSort(vector<int>& vec, int low, int high){
     }
 }
 
-int main ()
-{
-    int size;
-    cin >> size;
+int main() {
+    for (int n = 10; n <= 1000000; n *= 10) {
+        vector<int> vec(n);
 
-    vector<int> vec(size);
+        // Initialize the vector in reverse order for worst-case input (w.c.s)
+        for (int i = 0; i < n; i++) {
+            vec[i] = n - i;
+        }
 
-    for (int& i : vec) cin >> i;
-    quickSort(vec, 0, size-1);
+        auto start = high_resolution_clock::now();
+        quickSort(vec, 0, n - 1);  // Using Quick Sort here
+        auto stop = high_resolution_clock::now();
 
-    for (int i : vec) cout << i << " ";
+        auto duration = duration_cast<microseconds>(stop - start);
+
+        // Output the time taken by Quick Sort
+        cout << "Vector size: " << n << ", Time taken by quick sort: " << duration.count() << " microseconds" << endl;
+    }
 }

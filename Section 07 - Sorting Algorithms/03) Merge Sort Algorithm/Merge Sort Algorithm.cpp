@@ -1,12 +1,16 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
 
 /*
     Mrege Sort Algorithm
    ======================
    is a divide-and-conquer algorithm that recursively divide an array into two halves,
    sorts them separately and then merge them back together. It's a stable sorting algorithm
-   wiht a time complexity of O(n log(n)) & space complexity of O(n)
+
+    Merge Sort Time Complexity: O(n log n) (in all cases: worst, best, and average)
+    Merge Sort Space Complexity: O(n) due to the extra space required for left and right subarrays.
+
 
     The code consists of three main parts:
     ======================================
@@ -16,6 +20,7 @@
 */
 
 using namespace std;
+using namespace std::chrono;
 
 void merge(vector<int>& vec, int left, int mid, int right){
     int n1 = mid - left + 1;
@@ -69,15 +74,22 @@ void mergeSort(vector<int>& vec, int left, int right){
     }
 }
 
-int main ()
-{
-    int size;
-    cin >> size;
+int main () {
+    for (int n = 10; n <= 10000000; n *= 10) {
+        vector<int> vec(n);
 
-    vector<int> vec(size);
-    for (int& i : vec) cin >> i;
+        // Initialize the vector in reverse order for worst-case input (w.c.s)
+        for (int i = 0; i < n; i++) {
+            vec[i] = n - i;
+        }
 
-    mergeSort(vec, 0, size-1);
+        auto start = high_resolution_clock::now();
+        mergeSort(vec, 0, n - 1);  // Using Merge Sort here
+        auto stop = high_resolution_clock::now();
 
-    for (int i : vec) cout << i << " ";
+        auto duration = duration_cast<microseconds>(stop - start);
+
+        // Output the time taken by Merge Sort
+        cout << "Vector size: " << n << ", Time taken by merge sort: " << duration.count() << " microseconds" << endl;
+    }
 }
