@@ -25,13 +25,12 @@ void insertNode (int data)
     // Step 3: If the list is empty, make the head points to the newNode
     if (head == nullptr){
         head = newNode;
-        newNode->next = nullptr;
     }
     else {
         // Step 4: Traverse the list to find the last node
         node* last = head; // last = head = address of the first node
 
-        while (last->next != nullptr) // Move until we reach the last node
+        while (last->next) // Move until we reach the last node
         {
             last = last->next;
         }
@@ -43,18 +42,19 @@ void insertNode (int data)
 
 // Display function to appear elements of linked list
 void display (){
+        // Check if the linked list is empty
     if (head == nullptr){
         cout << "Linked List is Empty" << endl;
     }
     else {
         node* currentNode = head;
 
-        while (currentNode->next != nullptr){
-            cout << currentNode->value << endl;
-            currentNode = currentNode->next;
+        // Traverse the list and print each node's value
+        while (currentNode){
+            cout << currentNode->value << endl; // Print current node's value
+            currentNode = currentNode->next;    // Move to the next node
         }
     }
-
 }
 
 int main ()
